@@ -29,11 +29,11 @@ public class playerconturller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Flip();
-        Run();
-        Jump();
-        CheckGrounded();
-        DownGrounded();
+        Flip();//左右画面
+        Run();//奔跑
+        Jump();//跳跃
+        CheckGrounded();//是否在地面
+        DownGrounded();//是否落下
     }
 
     void CheckGrounded()
@@ -54,18 +54,19 @@ public class playerconturller : MonoBehaviour
 
     void DownGrounded()
     {
-        if(my_ahim.GetBool("Jump") && my_rigidybody.velocity.y<0.0f)
+        if(my_ahim.GetBool("Jump") && my_rigidybody.velocity.y<0.0f)//如果是跳跃过程中还在降落
         {
-           down_grounded_flag = true;
+           down_grounded_flag = true;//落下标志为真
         }
-        if (is_ground && down_grounded_flag)
+        if (is_ground && down_grounded_flag)//如果落下并且在地面上
         {
-            down_grounded_flag = false;
-            my_ahim.SetBool("Jump", false);
-            my_ahim.SetBool("Idle", true);
+            down_grounded_flag = false;//落下标志还原
+            my_ahim.SetBool("Jump", false);//关闭跳跃标志
+            my_ahim.SetBool("Idle", true);//打开静止标志
         }
     }
 
+    //判断左右方向并翻转动画
     void Flip()
     {
         bool playerHasXAxisSpeed = Mathf.Abs(my_rigidybody.velocity.x) > Mathf.Epsilon;
@@ -83,6 +84,7 @@ public class playerconturller : MonoBehaviour
         }
     }
 
+    //如果有速度，则播放奔跑动画
     void Run()
     {
         float moveDir = Input.GetAxis("Horizontal");
@@ -92,6 +94,7 @@ public class playerconturller : MonoBehaviour
         my_ahim.SetBool("Run", playerHasXAxisSpeed);
     }
 
+    //如果跳跃被按下，进入多重跳跃判断
     void Jump()
     {
         if (Input.GetButtonDown("Jump"))

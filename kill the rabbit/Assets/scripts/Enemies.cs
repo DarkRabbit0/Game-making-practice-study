@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    public int health;
-    public int enemyDamage;
-    public float flashTime;
-    private SpriteRenderer sr;
-    private Color original_color;
+    public int health;//HP
+    public int enemyDamage;//怪物伤害
+    public float flashTime;//闪烁时间
+    private SpriteRenderer sr;//怪物控件
+    private Color original_color;//原来颜色
 
     // Start is called before the first frame update
     public void Start()
@@ -24,23 +24,25 @@ public class Enemies : MonoBehaviour
         if(health <= 0)
         {
             Debug.Log("die");//调试信息
-            Destroy(gameObject);
+            Destroy(gameObject);//怪物消失
         }
     }
 
     public void TakeDamage(int playerdamage)
     {
         Debug.Log(health);//调试信息
-        health -= playerdamage;
-        FlashColor(Color.red,flashTime);
+        health -= playerdamage;//HP减少
+        FlashColor(Color.red,flashTime);//闪烁颜色
     }
 
+    //控制闪烁颜色和时间
     public void FlashColor(Color injuredcolor, float time)
     {
         sr.color = injuredcolor;
         Invoke("ResetColor",time);
     }
 
+//改变颜色为初始颜色
     public void ResetColor()
     {
         sr.color = original_color;
