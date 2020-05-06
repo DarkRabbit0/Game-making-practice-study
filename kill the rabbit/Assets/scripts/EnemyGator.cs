@@ -5,13 +5,14 @@ using UnityEngine;
 public class EnemyGator : Enemies
 {
     public float speed;
-    public float startWaitTime;
+    public float startwaitTime;
+    private float wait_time;
 
     // Start is called before the first frame update
     public new void Start()
     {
         health = 10;
-        enemydamage = 2;
+        enemyDamage = 2;
         base.Start();
     }
 

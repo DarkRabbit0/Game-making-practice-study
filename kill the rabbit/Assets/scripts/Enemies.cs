@@ -5,17 +5,17 @@ using UnityEngine;
 public class Enemies : MonoBehaviour
 {
     public int health;
-    public int enemydamage;
-    public float flashtime;
+    public int enemyDamage;
+    public float flashTime;
     private SpriteRenderer sr;
-    private Color originalColor;
+    private Color original_color;
 
     // Start is called before the first frame update
     public void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        originalColor = sr.color;
-        flashtime = 0.3f;
+        original_color = sr.color;
+        flashTime = 0.3f;
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class Enemies : MonoBehaviour
     {
         Debug.Log(health);//调试信息
         health -= playerdamage;
-        FlashColor(Color.red,flashtime);
+        FlashColor(Color.red,flashTime);
     }
 
     public void FlashColor(Color injuredcolor, float time)
@@ -43,6 +43,6 @@ public class Enemies : MonoBehaviour
 
     public void ResetColor()
     {
-        sr.color = originalColor;
+        sr.color = original_color;
     }
 }

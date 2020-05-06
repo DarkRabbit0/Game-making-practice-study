@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class playattack : MonoBehaviour
 {
-    public int playerdamage = 2;
+    public int playerDamage = 2;
     public float time = 0.24f;
-    public float starttime = 0.01f;
+    public float startTime = 0.01f;
 
     private Animator my_anim;
     private PolygonCollider2D my_coll2D;
@@ -37,7 +37,7 @@ public class playattack : MonoBehaviour
     IEnumerator StartAttack()
     {
         //Debug.Log("1");//调试信息
-        yield return new WaitForSeconds(starttime);
+        yield return new WaitForSeconds(startTime);
         my_coll2D.enabled = true;
         StartCoroutine(DisableHitBox());
     }
@@ -46,14 +46,14 @@ public class playattack : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         my_coll2D.enabled = false;
-        //Debug.Log(playerdamage);//调试信息
+        //Debug.Log(playerDamage);//调试信息
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.gameObject.CompareTag("Enemie"))
         {
-            other.GetComponent<Enemies>().TakeDamage(playerdamage);
+            other.GetComponent<Enemies>().TakeDamage(playerDamage);
         }
     }
 }
