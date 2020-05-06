@@ -1,52 +1,72 @@
-# Prerequisites
-*.d
+＃此.gitignore文件应放置在Unity项目目录的根目录下
+＃从https://github.com/github/gitignore/blob/master/Unity.gitignore获取最新信息
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
 
-# Linker output
-*.ilk
-*.map
-*.exp
+＃ MemoryCaptures可以得到尺寸过大。
+＃它们还可能包含极其敏感的数据
+/[Mm]emoryCaptures/
 
-# Precompiled Headers
-*.gch
-*.pch
+＃仅当相应资产也被忽略时，资产元数据才应被忽略
+!/[Aa]ssets/**/*.meta
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+＃如果您希望忽略资产商店工具插件，请取消注释此行
+# /[Aa]ssets/AssetStoreTools*
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+＃自动生成的Jetbrains Rider插件
+/[Aa]ssets/Plugins/Editor/JetBrains*
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+＃ Visual Studio中的缓存目录
+.vs/
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
+＃摇篮缓存目录
+.gradle/
+
+＃自动生成的VS / MD / Consulo解决方案和项目文件
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
 *.pdb
+*.mdb
+*.opendb
+*.VC.db
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+＃ Unity3D生成的元文件
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+
+＃ Unity3D在崩溃报告上生成的文件
+sysinfo.txt
+
+＃构建
+*.apk
+*.unitypackage
+
+＃ Crashlytics生成的文件
+crashlytics-build.properties
+
+＃打包的寻址
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+＃临时自动生成的Android资产
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+
+#我无法读取的文件
+/kill the rabbit/Temp/UnityLockfile
