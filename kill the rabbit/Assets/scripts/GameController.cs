@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public static CameraShake camShake;
+    public static CameraShake _camShake;
 }

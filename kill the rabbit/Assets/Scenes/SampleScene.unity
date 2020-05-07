@@ -470,7 +470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.1400001, y: 0.01999998, z: -10}
+  m_LocalPosition: {x: 0.05, y: 0.03, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 692305911}
@@ -507,6 +507,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1813672300}
   smoothing: 0.1
+  minPosition: {x: -2.65, y: -2.89}
+  maxPosition: {x: 2.86, y: 2.91}
 --- !u!4 &692305911
 Transform:
   m_ObjectHideFlags: 0
@@ -515,7 +517,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692305909}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.42, y: -0.83, z: 0}
+  m_LocalPosition: {x: 2.33, y: -0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
@@ -1204,6 +1206,7 @@ GameObject:
   - component: {fileID: 1813672296}
   - component: {fileID: 1813672295}
   - component: {fileID: 1813672301}
+  - component: {fileID: 1813672302}
   m_Layer: 0
   m_Name: player-idle-1
   m_TagString: Player
@@ -1374,6 +1377,21 @@ MonoBehaviour:
   jumpSpeed: 4
   doubleJumpspeed: 3.3
   jumpNumber: 2
+--- !u!114 &1813672302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813672294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ff0ec5e32d0e34eabc6ce8aeaed2b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHitPoint: 20
+  blinks: 3
+  playerBlinkTime: 1
 --- !u!1001 &1876531702
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ public class CameraFollow : MonoBehaviour
     void Start()
     {
         smoothing = 0.1f;//设定平滑移动参数
-        GameController.camShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();//通过标签绑定相机
+        GameController._camShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();//通过标签绑定相机震动脚本
     }
 
     void LateUpdate()

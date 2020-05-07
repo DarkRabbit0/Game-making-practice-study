@@ -17,7 +17,7 @@ public class EnemyGator : Enemies
     // Start is called before the first frame update
     public new void Start()
     {
-        health = 10;
+        enemiesHP = 10;
         enemyDamage = 2;
         speed = 2;
         startWaitTime = 1;
