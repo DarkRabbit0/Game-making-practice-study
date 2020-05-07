@@ -35,6 +35,7 @@ public class Enemies : MonoBehaviour
         health -= playerdamage;//HP减少
         FlashColor(Color.red,flashTime);//闪烁颜色
         Instantiate(bloodEffect, transform.position, Quaternion.identity);//创建粒子特效
+        GameController.camShake.Shake();
     }
 
     //控制闪烁颜色和时间

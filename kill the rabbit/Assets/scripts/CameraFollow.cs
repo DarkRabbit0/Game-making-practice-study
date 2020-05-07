@@ -9,7 +9,8 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        smoothing = 0.1f;
+        smoothing = 0.1f;//设定平滑移动参数
+        GameController.camShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShake>();//通过标签绑定相机
     }
 
     void LateUpdate()
