@@ -9,6 +9,7 @@ public class EnemyGator : Enemies
 
     private float wait_time;//等待时间
 
+
     public Transform movePos;//当前坐标
     public Transform leftDownPos;//左下角范围
     public Transform rightUpPos;//右上角范围

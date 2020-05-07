@@ -16,6 +16,7 @@ public class playattack : MonoBehaviour
     {
         my_anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();//获取玩家标签的动画
         my_coll2D = GetComponent<PolygonCollider2D>();//获取攻击的碰撞体
+        my_coll2D.enabled = false;//关闭攻击的碰撞体
     }
 
     // Update is called once per frame

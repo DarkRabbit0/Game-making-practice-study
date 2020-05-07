@@ -9,6 +9,7 @@ public class Enemies : MonoBehaviour
     public float flashTime;//闪烁时间
     private SpriteRenderer sr;//怪物控件
     private Color original_color;//原来颜色
+    public GameObject bloodEffect;//血液流逝特效
 
     // Start is called before the first frame update
     public void Start()
@@ -33,6 +34,7 @@ public class Enemies : MonoBehaviour
         Debug.Log(health);//调试信息
         health -= playerdamage;//HP减少
         FlashColor(Color.red,flashTime);//闪烁颜色
+        Instantiate(bloodEffect, transform.position, Quaternion.identity);//创建粒子特效
     }
 
     //控制闪烁颜色和时间
